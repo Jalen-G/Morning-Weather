@@ -1,11 +1,5 @@
 import requests, smtplib, datetime, time
 
-server = smtplib.SMTP( "smtp.gmail.com", 587 )
-
-server.starttls()
-
-server.login('***@gmail.com', '***')
-
 # Send text message through SMS gateway of destination number
 while True:
 
@@ -15,7 +9,12 @@ while True:
     print(time_now)
 
     if time_now == (8, 30, 0):
-       
+        server = smtplib.SMTP( "smtp.gmail.com", 587 )
+
+        server.starttls()
+
+        server.login('***@gmail.com', '***')
+        
         api_address = "http://api.openweathermap.org/data/2.5/weather?lat=***&lon=-***&appid=***&units=imperial"
 
         json_data = requests.get(api_address).json()
