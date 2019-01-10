@@ -1,6 +1,5 @@
 import requests, smtplib, datetime, time
 
-
 server = smtplib.SMTP( "smtp.gmail.com", 587 )
 
 server.starttls()
@@ -16,6 +15,7 @@ while True:
     print(time_now)
 
     if time_now == (8, 30, 0):
+       
         api_address = "http://api.openweathermap.org/data/2.5/weather?lat=34.73&lon=-87.7&appid=c3d2817674f897ffbb82c1f317e8329b&units=imperial"
 
         json_data = requests.get(api_address).json()
@@ -27,7 +27,9 @@ while True:
         min_temp = str(round(json_data["main"]["temp_min"]))
 
         server.sendmail( '***@gmail.com', '***@mms.att.net', "It is " + temp + " degrees and " + weather + " outside right now with a max of " + max_temp + " and a low of " + min_temp + ". The wind is blowing at " + wind + " MPH.")
+       
         time.sleep(5)
+        
         print("sent!")
 
 
