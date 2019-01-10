@@ -16,7 +16,7 @@ while True:
 
     if time_now == (8, 30, 0):
        
-        api_address = "http://api.openweathermap.org/data/2.5/weather?lat=34.73&lon=-87.7&appid=c3d2817674f897ffbb82c1f317e8329b&units=imperial"
+        api_address = "http://api.openweathermap.org/data/2.5/weather?lat=***&lon=-***&appid=***&units=imperial"
 
         json_data = requests.get(api_address).json()
 
