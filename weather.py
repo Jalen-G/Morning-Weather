@@ -26,7 +26,7 @@ while True:
         max_temp = str(round(json_data["main"]["temp_max"]))
         min_temp = str(round(json_data["main"]["temp_min"]))
 
-        server.sendmail( 'goodloejalen***@gmail.com', '***@mms.att.net', "It is " + temp + " degrees and " + weather + " outside right now with a max of " + max_temp + " and a low of " + min_temp + ". The wind is blowing at " + wind + " MPH.")
+        server.sendmail( '***@gmail.com', '***@mms.att.net', "It is " + temp + " degrees and " + weather + " outside right now with a max of " + max_temp + " and a low of " + min_temp + ". The wind is blowing at " + wind + " MPH.")
         time.sleep(5)
         print("sent!")
 
